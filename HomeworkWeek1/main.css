@@ -94,7 +94,22 @@
             width: 200px;
         }
 
-
+        .top{
+       
+            position: fixed;
+            right: 10px;
+            top: 170px;
+            border-radius: 50px;
+            font-size: 50px;
+         }
+     .top:hover{
+         transform: scale(0.8);
+         transition-duration: 0.6s;
+     }
+         .top i{
+             color: #112233;
+             
+         }
 
 
         main {

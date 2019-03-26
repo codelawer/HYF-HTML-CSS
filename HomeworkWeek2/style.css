@@ -11,6 +11,7 @@ I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", fo
  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     }
 
     header {
@@ -41,6 +42,8 @@ I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", fo
     border-radius: 10px;
     background: #02B7C7;
     text-align: center;
+    margin: 10px;
+    padding: 10px;
     }
 
     #grid-floats .grid-item:hover,
@@ -69,16 +72,15 @@ I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", fo
     #grid-floats .grid-item {
     float: left;
     min-height: 550px;
-    margin: 10px;
-    padding: 10px;
+    
     }
 
     #grid-floats .grid-item:first-child {
-    width: calc(50% - 42px);
+    width: calc(50% - 20px);
     }
 
     #grid-floats .grid-item:nth-child(n+2) {
-    width: calc(25% - 42px);
+    width: calc(25% - 20px);
     }
 
     #grid-floats::after {
@@ -91,34 +93,33 @@ I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", fo
     @media all and (max-width:768px) {
     #grid-floats .grid-item {
     float: left;
-    min-height: 380px;
+    min-height: 420px;
+    
     }
 
     #grid-floats .grid-item:nth-child(-n+2) {
-    width: calc(50% - 42px);
+    width: calc(50% - 20px);
     }
 
     #grid-floats .grid-item:nth-child(n+3) {
-    width: calc(25% - 42px);
+    width: calc(100% / 3 - 20px);
     }
     }
 
-    @media all and (max-width:376px) {
+    @media all and (max-width:320px) {
 
     #grid-floats .grid-item {
     float: left;
     min-height: 355px;
-    margin: 1%;
-    padding: 2%;
-    border: 0;
+    
     }
 
     #grid-floats .grid-item:first-child {
-    width: 94%;
+    width: calc(100% - 20px);
     }
 
     #grid-floats .grid-item:nth-child(n+2) {
-    width: 44%;
+    width: calc(50% - 20px);
     }
     }
 

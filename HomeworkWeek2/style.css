@@ -1,5 +1,5 @@
 /*Questions
-I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", for Ipad:"max-width:768" and for
+I defined three different @media quaries. for Iphone 5/SE:"max-width:320px", for Ipad:"max-width:768" and for
         wider rest "min-width:768px".
         ın float part; I gave spesific min-height each item. Because, for example if I clear an item the rest didn't
         floated.

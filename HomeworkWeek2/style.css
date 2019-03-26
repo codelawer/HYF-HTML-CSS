@@ -1,247 +1,199 @@
-
-/*Common*/
-* {
-    width: 100%;
+/*Questions
+I defined three different @media quaries. for Iphone 6-7-8:"max-width:376px", for Ipad:"max-width:768" and for
+        wider rest "min-width:768px".
+        ın float part; I gave spesific min-height each item. Because, for example if I clear an item the rest didn't
+        floated.
+        But when the screen width changes the floated elements heights effected that and boxes floated.
+        What is the ideal way of the do fix this.
+*/ 
+ 
+ /*Common*/
+ * {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-}
+    }
 
-h1{
-text-align: center;
-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
-background: #112233;
-color:#fff;
-}
-section h2 {
+    header {
     text-align: center;
-    padding: 10px;
-    border: 1px black;
-    background: tomato;
-    width: 100%;
-    margin: 10px auto;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background: deepskyblue;
+    }
+
+    h2 {
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background: #888;
+    margin: 10px;
+    }
+
+    #grid-floats,
+    #grid-flex {
+
+    background: lightgray;
+    }
 
 
-}
 
-section:nth-child(n+1) ul li {
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
-    padding: 5px 0;
+    #grid-floats .grid-item,
+    #grid-flex .grid-item {
+    list-style: none;
+    border: 1px solid darkgray;
     border-radius: 10px;
+    background: #02B7C7;
     text-align: center;
-    padding: 0 1px;
+    }
 
-
-
-}
-
-section:nth-child(n+1) ul li:hover {
+    #grid-floats .grid-item:hover,
+    #grid-flex .grid-item:hover {
     background: #112233;
-    animation-name: center;
-   transform:scale(1.1);
-    transition: all 0.5s ease-out;
-    display: relative;
-}
-
-/* @keyframes center {
-    25%{
-        transform: translate(25%, 25%);
-    }
-    50%{
-        transform: translate(50%, 50%);
-    }
-    75%{
-        transform: translate(-25%, -25%);
-    }
-    100%{
-        transform: translate(-50%, -50%);
-    }
-} */
-
-section:nth-child(n+1) ul li img:hover {
-    transform: rotate(360deg);
-}
-
-section {
-    padding: 1px;
-}
-
-/* Display Grid*/
-
-@media all and (min-width: 768px) {
-
-
-
-    section:nth-child(1) ul {
-
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 300px, auto;
-        /*---------*/
-        list-style: none;
-        text-align: center;
-        grid-gap: 10px;
-
+    transform: scale(0.9);
+    transition: 0.5s;
+    color: #fff;
     }
 
-    section:nth-child(1) ul li {
-        border: 1px black;
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000;
-
+    #grid-floats .grid-item img,
+    #grid-flex .grid-item img {
+    max-width: 100%;
     }
 
-    section:nth-child(1) ul li:nth-child(1) {
-        grid-column: span 2;
+    #grid-floats::after {
+    content: "";
+    clear: both;
+    display: block;
     }
 
-    
-}
 
-@media all and (min-width:375px) and (max-width:767px) {
-    section:nth-child(1) ul {
+    /*----------------floats---------------*/
+    @media all and (min-width:768px) {
 
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        list-style: none;
-        text-align: center;
-        grid-gap: 10px;
-
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 550px;
+    margin: 10px;
+    padding: 10px;
     }
 
-    section:nth-child(1) ul li {
-        border: 1px  black;
-
+    #grid-floats .grid-item:first-child {
+    width: calc(50% - 42px);
     }
 
-    section:nth-child(1) ul li:nth-child(-n+12) {
-        grid-column: span 3;
+    #grid-floats .grid-item:nth-child(n+2) {
+    width: calc(25% - 42px);
     }
 
-    section:nth-child(1) ul li:nth-child(n+3) {
-        background: #fff;
-        grid-column: span 2;
+    #grid-floats::after {
+    content: "";
+    clear: both;
+    display: block;
+    }
     }
 
-    section:nth-child(n+1) ul li:hover {
-        background: #112233;
-        
-        transition: all 0.5s;
+    @media all and (max-width:768px) {
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 380px;
     }
 
-}
-
-@media all and (max-width:374px) {
-    section:nth-child(1) ul {
-
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-        list-style: none;
-        text-align: center;
-        grid-gap: 10px;
+    #grid-floats .grid-item:nth-child(-n+2) {
+    width: calc(50% - 42px);
     }
 
-    section:nth-child(1) ul li {
-        background: #8f8f8f;
-        border: 1px solid black;
+    #grid-floats .grid-item:nth-child(n+3) {
+    width: calc(25% - 42px);
+    }
     }
 
-    section:nth-child(1) ul li:nth-child(1) {
+    @media all and (max-width:376px) {
 
-        grid-column: span 2;
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 355px;
+    margin: 1%;
+    padding: 2%;
+    border: 0;
     }
-}
 
-/*Display Flex*/
+    #grid-floats .grid-item:first-child {
+    width: 94%;
+    }
 
-@media all and (min-width: 768px) {
+    #grid-floats .grid-item:nth-child(n+2) {
+    width: 44%;
+    }
+    }
 
-    section:nth-child(2) ul {
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        flex-flow: row wrap;
 
+    /*-----------------Flexbox-------------------*/
+
+
+    @media all and (min-width:768px) {
+
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
+    }
+
+    #grid-flex .grid-item {
+    margin: 1%;
+    padding: 2%;
+    border: 0;
+    }
+
+    #grid-flex .grid-item:nth-child(1) {
+    flex-basis: 44%;
     }
 
 
 
-
-
-    section:nth-child(2) ul li:nth-child(1) {
-
-        flex-basis: 50%;
-
-
+    #grid-flex .grid-item:nth-child(n+2) {
+    flex-basis: 19%;
     }
-
-    section:nth-child(2) ul li:nth-child(n+2) {
-
-        flex-basis: 24%;
-    }
-
-}
-
-@media all and (min-width:375px) and (max-width:767px) {
-    section:nth-child(2) ul {
-        display: flex;
-        list-style: none;
-        justify-content: space-between;
-        flex-flow: row wrap;
-
     }
 
 
+    @media all and (max-width:768px) {
 
-
-
-    section:nth-child(2) ul li:nth-child(-n+2) {
-
-        flex-basis: 50%;
-
-
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
     }
 
-
-    section:nth-child(2) ul li:nth-child(n+3) {
-        flex-basis: 33%;
-
+    #grid-flex .grid-item {
+    margin: 1%;
+    padding: 2%;
+    border: 0;
     }
 
+    #grid-flex .grid-item:nth-child(-n+2) {
+    flex-basis: 44%;
+    }
 
-}
-
-@media all and (max-width:374px) {
-
-    section:nth-child(2) ul {
-        display: flex;
-        list-style: none;
-        justify-content: space-between;
-        flex-flow: row wrap;
-
+    #grid-flex .grid-item:nth-child(n+3) {
+    flex-basis: 27%;
+    }
     }
 
 
 
+    @media all and (max-width:376px) {
 
-
-    section:nth-child(2) ul li:nth-child(1) {
-
-        flex-basis: 100%;
-
-
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
     }
 
-
-    section:nth-child(2) ul li:nth-child(n+2) {
-        flex-basis: 50%;
-
+    #grid-flex .grid-item {
+    margin: 1%;
+    padding: 2%;
+    border: 0;
     }
 
-}
+    #grid-flex .grid-item:nth-child(1) {
+    flex-basis: 100%;
+    }
+
+    #grid-flex .grid-item:nth-child(n+2) {
+    flex-basis: 44%;
+
+    } 
+    }

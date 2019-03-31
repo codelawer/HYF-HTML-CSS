@@ -1,0 +1,194 @@
+/*Questions
+I defined three different @media quaries. for Iphone 5/SE:"max-width:320px", for Ipad:"max-width:768" and for
+        wider rest "min-width:768px".
+        ın float part; I gave spesific min-height each item. Because, for example if I clear an item the rest didn't
+        floated.
+        But when the screen width changes the floated elements heights effected that and boxes floated.
+        What is the ideal way of the do fix this.
+*/ 
+ 
+ /*Common*/
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    header {
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background: deepskyblue;
+    }
+
+    h2 {
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background: #888;
+    margin: 10px;
+    }
+
+    #grid-floats,
+    #grid-flex {
+
+    background: lightgray;
+    }
+
+
+
+    #grid-floats .grid-item,
+    #grid-flex .grid-item {
+    list-style: none;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    background: #02B7C7;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    }
+
+    #grid-floats .grid-item:hover,
+    #grid-flex .grid-item:hover {
+    background: #112233;
+    transform: scale(0.9);
+    transition: 0.5s;
+    color: #fff;
+    }
+
+    #grid-floats .grid-item img,
+    #grid-flex .grid-item img {
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 40px;
+    }
+
+    #grid-floats::after {
+    content: "";
+    clear: both;
+    display: block;
+    }
+
+
+    /*----------------floats---------------*/
+    @media all and (min-width:768px) {
+
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 550px;
+    
+    }
+
+    #grid-floats .grid-item:first-child {
+    width: calc(50% - 20px);
+    }
+
+    #grid-floats .grid-item:nth-child(n+2) {
+    width: calc(25% - 20px);
+    }
+
+    #grid-floats::after {
+    content: "";
+    clear: both;
+    display: block;
+    }
+    }
+
+    @media all and (max-width:768px) {
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 420px;
+    
+    }
+
+    #grid-floats .grid-item:nth-child(-n+2) {
+    width: calc(50% - 20px);
+    }
+
+    #grid-floats .grid-item:nth-child(n+3) {
+    width: calc(100% / 3 - 20px);
+    }
+    }
+
+    @media all and (max-width:320px) {
+
+    #grid-floats .grid-item {
+    float: left;
+    min-height: 500px;
+    
+    }
+
+    #grid-floats .grid-item:first-child {
+    width: calc(100% - 20px);
+    }
+
+    #grid-floats .grid-item:nth-child(n+2) {
+    width: calc(50% - 20px);
+    }
+    }
+
+
+    /*-----------------Flexbox-------------------*/
+
+    #grid-flex .grid-item {
+        border: 0;
+        }
+    @media all and (min-width:768px) {
+
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
+    }
+
+   
+    #grid-flex .grid-item:nth-child(1) {
+    flex-basis: calc(50% - 20px);
+    }
+
+
+
+    #grid-flex .grid-item:nth-child(n+2) {
+    flex-basis: calc(25% - 20px);
+    }
+    }
+
+
+    @media all and (max-width:768px) {
+
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
+    }
+
+  
+
+    #grid-flex .grid-item:nth-child(-n+2) {
+    flex-basis: calc(50% - 20px);
+    }
+
+    #grid-flex .grid-item:nth-child(n+3) {
+    flex-basis: calc (100% / 3 - 20px);
+    }
+    }
+
+
+
+    @media all and (max-width:376px) {
+        #grid-flex .grid-item {
+                border: 0;
+                }
+    #grid-flex {
+    display: flex;
+    flex-flow: row wrap;
+    }
+
+
+    #grid-flex .grid-item:nth-child(1) {
+    flex-basis: 100%;
+    }
+
+    #grid-flex .grid-item:nth-child(n+2) {
+    flex-basis: calc(50% - 20px);
+    
+
+    } 
+    }

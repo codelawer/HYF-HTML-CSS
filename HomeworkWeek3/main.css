@@ -1,0 +1,344 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+
+}
+
+/* Mobile First */
+.wrapper{
+    background: url(images/ist3.jpg) no-repeat;
+    background-position: top;
+    width: 100%;
+    height: 100vh;
+    
+}
+header{
+    display: flex;
+    background: rgba(0,0,0,.1);
+    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+    align-items: center;
+    padding: 1%;
+    font-family: Orbitron;
+}
+
+header a:first-child{
+    float: left;
+}
+nav{
+    position: absolute;
+    right: 6%;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    
+}
+nav ul li{
+    width: auto;
+    margin: 0 1%;
+}
+
+
+nav ul ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top:20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+}
+nav a:hover{
+    background: #fff;
+    color: #000;
+}
+
+nav ul ul{
+    display: none;
+}
+nav ul li:hover ul{
+    display: flex;
+}
+.type::before{
+    content: "";
+    display: block;
+    margin-bottom: 50%;
+}
+
+.type{
+    width: min-content;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+.type h1 {
+    font-family: monospace; /* Web-safe typewriter-like font */
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto;  /*Gives that scrolling effect as the typing happens */
+       animation: 
+      typing 3.5s steps(25, end),
+      blinking-cursor .5s step-end infinite;
+      color:#fff;
+      font-size: 20px;
+      background: #000;
+      padding: 5px 0 5px 10px;
+      
+      
+     
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blinking-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: #fff; }
+  }
+.top{
+    position: absolute;
+    right: 1%;
+    font-size: 3rem;
+    transition: 0.5s ease-in-out;
+    
+}
+.top:hover{
+    transform: scale(1.1);
+}
+
+
+
+main{
+    max-width: 100%; 
+    margin: 0 auto;
+   
+
+   
+}
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    
+}
+.main-wrapper h1{
+    text-align: center;
+    border: 1px solid tomato;
+    width: 200px;
+    border-radius: 20px;
+    background: #112233;
+    color: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.3);
+    margin-top:10px;
+
+}
+
+main .firstimg{
+ float: left;
+ margin-right: 5px;
+ 
+}
+
+
+
+
+main .secondimg{
+    float: right;
+    margin-left: 5px;
+
+}
+
+main h3{
+    text-align: center;
+ margin: 10px;
+ color: tomato;
+ background: #112233;
+ border-radius: 20px;
+ box-shadow: 5px 5px 5px rgba(0,0,0,.3)
+
+ 
+}
+
+
+main .secondp::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+
+section {
+    width: 100%;
+   
+    background: #d6d0d0;
+    font-family: Righteous, sans-serif;
+    padding: 20px;
+    background: linear-gradient(139deg, #8f8f8f, #fff);
+
+}
+
+section h2 {
+    text-align: center;
+    background: tomato;
+    color: #fff;
+    box-shadow: rgba(0,0,0,.3);
+}
+
+section a{
+    text-decoration: none;
+}
+
+
+section li:nth-child(2n+1){
+    margin: 10px;
+}
+section li:nth-child(2n+2){
+    border-bottom: 1px solid #112233;
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+
+}
+section li:nth-child(2n+1):hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+}
+section ul{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    list-style: none;
+}
+
+section i {
+    font-size: 50px;    
+    padding: 0 10px;
+
+}
+.fa-html5 {
+    color: #e34f26;
+}
+
+.fa-css3-alt {
+    color: #002561
+}
+
+.fa-js {
+    color: #f7df1e
+}
+
+
+article{
+    background: linear-gradient(139deg, rgba(255, 0, 0, .5), rgba(0, 255, 0, .5));
+padding: 1%;
+}
+article p:first-child{
+    border:1px solid blueviolet;
+    margin: 1%;
+    background: radial-gradient(yellow, red);
+    border-radius: 10px;
+   
+}
+article p:nth-child(n+2){
+    border:1px solid blueviolet;
+    margin: 1%;
+    background: radial-gradient(tomato,#112233);
+    border-radius: 10px;
+   
+}
+
+article p:last-child{
+    border:1px solid blueviolet;
+    margin: 1%;
+    background: radial-gradient(#112233,tomato);
+    border-radius: 10px;
+   
+}
+article p{
+    text-align: center;
+    padding: 10px;
+}
+article p:nth-child(2n+2){
+    color: #fff;
+    
+}
+footer .awrapper {
+    background: #112233;
+    overflow: hidden;
+    padding: 0 20px;
+    display: flex;
+    flex-flow: row wrap;
+    color: #fff;
+    list-style-type: none;
+    justify-content: center;
+}
+
+
+footer a {
+    font-size: 50px;
+    color: #000;
+   margin: 0 10px;
+    transition:1s linear;
+    /*line-height: 80px;*/
+   
+}
+
+footer a:hover {
+    transform: rotate(360deg);
+    
+}
+
+.fa-github,
+.fa-codepen {
+    font-size: 50px;
+    padding: 5px;
+    color: #fff;
+}
+
+footer p{
+    color: #112233;
+    text-align: center;
+    font-style: italic;
+    float: right;
+
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+}
+.clearfix{
+    clear: both;
+    content: "";
+    display: block;
+     
+} 
+
+
+@media all and (min-width:768px){
+    #portfolio ul{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    #portfolio ul li{
+        justify-self: center;
+    }
+article {
+    display: flex;
+}
+
+
+}

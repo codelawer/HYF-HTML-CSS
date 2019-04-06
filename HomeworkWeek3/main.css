@@ -114,7 +114,7 @@ nav ul li:hover ul{
   }
 
 .top{
-    position: absolute;
+    position: fixed;
     right: 1%;
     font-size: 3rem;
     transition: 0.5s ease-in-out; 
@@ -402,10 +402,12 @@ nav ul li span{
 
   main .one {
       grid-column: span 2;
+      padding: 100px;
   }
   main .two{
     grid-column: span 2;
     grid-row: 4;
+    padding: 100px;
   }
   #about img, #about p{
       justify-self: center;

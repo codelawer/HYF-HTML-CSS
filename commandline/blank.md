@@ -23,4 +23,4 @@ echo "hamster" >> pets.txt
 echo "cat" > commands.txt
 echo "ls" >> commands.txt
 echo "pwd" >> commands.txt
-cat pets.txt commands.txt | sort | uniq > lovelyCommands.tx
+cat pets.txt commands.txt | sort | uniq > lovelyCommands.txt
